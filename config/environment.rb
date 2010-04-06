@@ -38,4 +38,7 @@ RuGUI::Initializer.run do |config|
   # config.gem "bj"
   # config.gem "hapricot", :version => '>0.8', :source => "http://code.whytheluckystiff.net"
   # config.gem "aws-s3", :lib => "aws/s3"
+
+  config.application[:rings] = 5
+  config.application[:movement_interval] = 0.8
 end

@@ -12,8 +12,7 @@ class MainController < RuGUI::BaseMainController
   def initialize
     super
 
-    
-    hanoi.setup(5)
+    hanoi.setup(RuGUI.configuration.application[:rings], RuGUI.configuration.application[:movement_interval])
     main_view.setup(screen, hanoi)
 
     @thread = Thread.new { hanoi.start }

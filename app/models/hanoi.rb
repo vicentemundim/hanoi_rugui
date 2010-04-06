@@ -9,10 +9,11 @@ class Hanoi < RuGUI::BaseModel
   
   observable_property :movement_interval, :initial_value => 1 # in seconds
 
-  def setup(number_of_rings)
+  def setup(number_of_rings, movement_interval)
     self.reset!
 
     self.number_of_rings = number_of_rings
+    self.movement_interval = movement_interval
 
     self.towers = [left_tower, middle_tower, right_tower]
     self.towers.each do |tower|
@@ -44,6 +45,6 @@ class Hanoi < RuGUI::BaseModel
 
   def wait_for_next_movement
     logger.info "Waiting for next movement"
-    sleep movement_interval.to_i
+    sleep movement_interval.to_f
   end
 end
